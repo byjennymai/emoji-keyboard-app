@@ -1,0 +1,902 @@
+@import 'tailwindcss';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Input Mono';
+  src: url('/fonts/InputMono-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Input Mono';
+  src: url('/fonts/InputMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PP Fraktion Mono';
+  src: url('/fonts/PPFraktionMono-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PP Fraktion Mono';
+  src: url('/fonts/PPFraktionMono-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Supply Mono';
+  src: url('/fonts/PPSupplyMono-Ultralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Supply Mono';
+  src: url('/fonts/SupplyMono-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Supply Mono';
+  src: url('/fonts/PPSupplyMono-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Supply Mono';
+  src: url('/fonts/PPSupplyMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Supply Mono';
+  src: url('/fonts/PPSupplyMono-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GT Maru Mono';
+  src: url('/fonts/GT Maru Mono Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FT88';
+  src: url('/fonts/FT88-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FT88';
+  src: url('/fonts/FT88-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FT88 Gothique';
+  src: url('/fonts/FT88-Gothique.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FT88';
+  src: url('/fonts/FT88-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'FT88';
+  src: url('/fonts/FT88-School.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FT88';
+  src: url('/fonts/FT88-Serif.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Maru Mono';
+  src: url('/fonts/GT Maru Mono Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PP NeueBit';
+  src: url('/fonts/PPNeueBit-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PP NeueBit';
+  src: url('/fonts/PPNeueBit-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rascal';
+  src: url('/fonts/rascal.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+::selection {
+  background-color: #47a3f3;
+  color: #fefefe;
+}
+
+:root {
+  --sh-class: #2d5e9d;
+  --sh-identifier: #354150;
+  --sh-sign: #8996a3;
+  --sh-string: #007f7a;
+  --sh-keyword: #e02518;
+  --sh-comment: #a19595;
+  --sh-jsxliterals: #6266d1;
+  --sh-property: #e25a1c;
+  --sh-entity: #e25a1c;
+  --grid-opacity: 0.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sh-class: #4c97f8;
+    --sh-identifier: white;
+    --sh-keyword: #f47067;
+    --sh-string: #0fa295;
+  }
+  html {
+    color-scheme: dark;
+  }
+}
+
+html {
+  min-width: 360px;
+}
+
+/* Light mode styles */
+html.light {
+  color-scheme: light;
+}
+
+/* Dark mode styles */
+html.dark {
+  color-scheme: dark;
+}
+
+/* Default dark theme (fallback) */
+html {
+  color-scheme: dark;
+}
+
+/* Ensure dark mode text colors are applied */
+html.dark {
+  color-scheme: dark;
+}
+
+/* Force dark mode text colors for specific elements */
+html.dark .text-neutral-900 {
+  color: #D1D1D1 !important;
+}
+
+html.dark .text-neutral-100 {
+  color: #D1D1D1 !important;
+}
+
+/* Custom divider opacity for dark mode */
+html.dark .border-neutral-700\/40 {
+  border-color: rgba(55, 65, 81, 0.4) !important;
+}
+
+/* Custom dark divider class */
+html.dark .dark-divider {
+  border-bottom-color: rgba(82, 82, 91, 0.4) !important;
+}
+
+/* Fix active nav link background in dark mode */
+html.dark .bg-neutral-200 {
+  background-color: #2E2A2A !important;
+}
+
+/* Fix hover background in dark mode - only for specific elements */
+html.dark .posts-link:hover {
+  background-color: rgba(64, 64, 64, 0.15) !important;
+}
+
+/* Custom hover color for blog links in light mode */
+html:not(.dark) .posts-link:hover,
+html:not(.dark) button.posts-link:hover,
+html:not(.dark) button.posts-link:focus,
+html:not(.dark) button.posts-link:active {
+  background-color: rgba(190, 211, 228, 0.25) !important;
+}
+
+/* Override any Tailwind button hover styles */
+button.posts-link:hover {
+  background-color: rgba(190, 211, 228, 0.25) !important;
+}
+
+/* Ultra-specific rule to override everything */
+div.w-\[400px\] button.posts-link:hover {
+  background-color: rgba(190, 211, 228, 0.25) !important;
+}
+
+/* Force the color with maximum specificity */
+html:not(.dark) div.w-\[400px\] button.posts-link:hover {
+  background-color: rgba(190, 211, 228, 0.25) !important;
+}
+
+/* Custom blog hover button class */
+.blog-hover-button:hover {
+  background-color: rgba(190, 211, 228, 0.25) !important;
+}
+
+html:not(.dark) .blog-hover-button:hover {
+  background-color: rgba(190, 211, 228, 0.25) !important;
+}
+
+/* Fix theme toggle hover in dark mode */
+html.dark button:hover {
+  background-color: #2E2A2A !important;
+}
+
+/* Fix nav link hover in dark mode */
+html.dark a:hover {
+  color: white !important;
+}
+
+/* Fix weather modal in dark mode */
+html.dark .weather-modal {
+  background-color: #2E2A2A !important;
+}
+
+/* Fix weather modal text colors in dark mode */
+html.dark .weather-modal .text-neutral-900 {
+  color: #D1D1D1 !important;
+}
+
+html.dark .weather-modal .text-neutral-600 {
+  color: #A2A2A2 !important;
+}
+
+html.dark .weather-modal .text-neutral-700 {
+  color: #A2A2A2 !important;
+}
+
+/* Fix weather modal bottom section in dark mode */
+html.dark .weather-modal .bg-neutral-200\/50 {
+  background-color: rgba(64, 64, 64, 0.5) !important;
+}
+
+html.dark .weather-modal .bg-neutral-700\/50 {
+  background-color: rgba(64, 64, 64, 0.5) !important;
+}
+
+/* Fix text in weather modal bottom section */
+html.dark .weather-modal .text-neutral-400 {
+  color: #D1D1D1 !important;
+}
+
+/* Fix blog link titles in light mode */
+html:not(.dark) .text-neutral-800 {
+  color: #1f2937 !important;
+}
+
+/* Fix blog post titles in dark mode */
+html.dark .posts-link p:first-child {
+  color: #9CA3AF !important;
+}
+
+/* Fix blog post dates in dark mode to match bio text */
+html.dark .posts-link p:last-child {
+  color: #525252 !important;
+}
+
+/* Update text colors for light mode */
+html.light h1,
+html.light .posts-link p:first-child,
+html.light .title {
+  color: #606D98 !important;
+}
+
+/* Update bio text color in light mode */
+html.light p {
+  color: #606D98 !important;
+}
+
+/* Update navigation links in light mode */
+html.light nav a {
+  color: #606D98 !important;
+}
+
+/* Update active nav link in light mode */
+html.light nav a.bg-neutral-200 {
+  color: #606D98 !important;
+  background-color: rgba(96, 109, 152, 0.15) !important;
+}
+
+/* Update weather component in light mode */
+html.light .weather-component,
+html.light .weather-component span {
+  color: #606D98 !important;
+}
+
+/* Update blog post dividers in light mode */
+html.light .posts-link.border-b {
+  border-bottom-color: rgba(96, 109, 152, 0.30) !important;
+}
+
+.prose .anchor {
+  @apply absolute invisible no-underline;
+
+  margin-left: -1em;
+  padding-right: 0.5em;
+  width: 80%;
+  max-width: 700px;
+  cursor: pointer;
+}
+
+.anchor:hover {
+  @apply visible;
+}
+
+.prose a {
+  @apply underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+}
+
+.prose .anchor:after {
+  @apply text-neutral-300 dark:text-neutral-700;
+  content: '#';
+}
+
+.prose *:hover > .anchor {
+  @apply visible;
+}
+
+.prose pre {
+  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 py-2 px-3 text-sm;
+}
+
+.prose code {
+  @apply px-1 py-0.5 rounded-lg;
+}
+
+.prose pre code {
+  @apply p-0;
+  border: initial;
+  line-height: 1.5;
+}
+
+.prose code span {
+  @apply font-medium;
+}
+
+.prose img {
+  /* Don't apply styles to next/image */
+  @apply m-0;
+}
+
+.prose p {
+  @apply my-4 text-neutral-800;
+  font-family: 'Supply Mono', monospace;
+  font-weight: 300;
+}
+
+/* Fix prose paragraph text color in light mode */
+html.light .prose p {
+  color: #606D98 !important;
+}
+
+/* Fix prose paragraph text color in dark mode */
+html.dark .prose p {
+  color: #808080 !important;
+}
+
+/* Fix prose list text colors in light mode */
+html.light .prose ul,
+html.light .prose ol,
+html.light .prose li {
+  color: #606D98 !important;
+}
+
+/* Fix prose heading text colors in dark mode */
+html.dark .prose h1,
+html.dark .prose h2,
+html.dark .prose h3,
+html.dark .prose h4,
+html.dark .prose h5,
+html.dark .prose h6 {
+  color: #D1D1D1 !important;
+}
+
+/* Fix prose heading text colors in light mode */
+html.light .prose h1,
+html.light .prose h2,
+html.light .prose h3,
+html.light .prose h4,
+html.light .prose h5,
+html.light .prose h6 {
+  color: #606D98 !important;
+}
+
+.prose h1 {
+  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
+  font-family: 'Supply Mono', monospace;
+  font-weight: 500;
+}
+
+.prose h2 {
+  @apply text-[16px] font-medium tracking-tight mt-12 mb-2 uppercase;
+  font-family: 'Supply Mono', monospace;
+  font-weight: 500;
+}
+
+.prose h3 {
+  @apply text-[16px] font-medium tracking-tight mt-12 mb-2 uppercase;
+  font-family: 'Supply Mono', monospace;
+  font-weight: 500;
+}
+
+.prose h4 {
+  @apply text-[16px] font-medium tracking-tight mt-12 mb-2 uppercase;
+  font-family: 'Supply Mono', monospace;
+  font-weight: 500;
+}
+
+.prose strong {
+  @apply font-medium;
+}
+
+.prose ul {
+  @apply list-disc pl-6;
+  font-family: 'Supply Mono', monospace;
+  font-weight: 300;
+}
+
+.prose ol {
+  @apply list-decimal pl-6;
+  font-family: 'Supply Mono', monospace;
+  font-weight: 300;
+}
+
+.prose li {
+  font-family: 'Supply Mono', monospace;
+  font-weight: 300;
+  margin: 0.5rem 0;
+}
+
+.prose > :first-child {
+  /* Override removing top margin, causing layout shift */
+  margin-top: 1.25em !important;
+  margin-bottom: 1.25em !important;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Remove Safari input shadow on mobile */
+input[type='text'],
+input[type='email'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+table {
+  display: block;
+  max-width: fit-content;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.title {
+  text-wrap: balance;
+}
+
+/* Add spacing to emoji buttons */
+[data-slot="emoji-picker-emoji"] {
+  margin: 2px 0 !important;
+}
+
+/* Force emoji picker hover background color */
+[data-slot="emoji-picker-emoji"]:hover {
+  background: linear-gradient(to bottom, #FAFAF4 0%, #E8E8E8 100%) !important;
+  box-shadow:
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.08), 
+    inset 1px 1px 2px 1px #ffffffe6,
+    inset -1px -1px 2px 2px rgba(0, 0, 0, 0.03),
+    -0.5px -0.5px 2px rgba(0, 0, 0, 0.09),
+    1px 1px 4px  rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Override any dark mode styles for emoji hover */
+html.dark [data-slot="emoji-picker-emoji"]:hover {
+  background: linear-gradient(to bottom, #FAFAF4 0%, #E8E8E8 100%) !important;
+  box-shadow: 
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.08), 
+    inset 1px 1px 2px 1px rgba(255, 255, 255, 0.9),
+    inset 0 2px 4px rgba(0, 0, 0, 0.1),
+    -0.5px -0.5px 2px rgba(0, 0, 0, 0.09),
+    1px 1px 4px rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Emoji button active/clicked state */
+[data-slot="emoji-picker-emoji"]:active {
+  background: 
+    radial-gradient(circle at top left, rgba(227, 227, 222, 0.9) 0%, rgba(245, 245, 240, 0.7) 100%),
+    linear-gradient(to bottom, #FAFAF4 0%, #E8E8E8 100%) !important;
+  box-shadow:
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.08), 
+    inset 1px 1px 2px 1px #ffffffe6,
+    inset -1px -1px 2px 2px rgba(0, 0, 0, 0.03),
+    -0.5px -0.5px 2px rgba(0, 0, 0, 0.09),
+    1px 1px 4px rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Dark mode active state */
+html.dark [data-slot="emoji-picker-emoji"]:active {
+  background: 
+    radial-gradient(circle at top left, rgba(227, 227, 222, 0.7) 0%, rgba(245, 245, 240, 0.5) 100%),
+    linear-gradient(to bottom, #FAFAF4 0%, #E8E8E8 100%) !important;
+  box-shadow: 
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.08), 
+    inset 1px 1px 2px 1px rgba(255, 255, 255, 0.9),
+    inset 0 2px 4px rgba(0, 0, 0, 0.1),
+    -0.5px -0.5px 2px rgba(0, 0, 0, 0.09),
+    1px 1px 4px rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Copy badge animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.copy-badge {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Custom slider styles */
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #374151;
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.slider::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #374151;
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+html.dark .slider::-webkit-slider-thumb {
+  background: #9ca3af;
+}
+
+html.dark .slider::-moz-range-thumb {
+  background: #9ca3af;
+}
+
+/* Animated Gradient Background Styles */
+:root {
+  --color-bg1: #E0F0FF;
+  --color-bg2: #FFFFFF;
+  --color1: 161, 201, 243; /* #A1C9F3 */
+  --color2: 187, 220, 255; /* #BBDCFF */
+  --color3: 212, 233, 255; /* #D4E9FF */
+  --color4: 224, 240, 255; /* #E0F0FF */
+  --color5: 255, 255, 255; /* #FFFFFF */
+  --color-interactive: 161, 201, 243; /* #A1C9F3 for interactive */
+  --circle-size: 200%;
+  --blending: hard-light;
+}
+
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}
+
+.gradient-bg {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+  z-index: -1;
+}
+
+.gradient-bg svg {
+  display: none;
+}
+
+.gradients-container {
+  filter: url(#goo) blur(40px);
+  width: 100%;
+  height: 100%;
+}
+
+.g1 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+  transform-origin: center center;
+  animation: moveVertical 30s ease infinite;
+  opacity: 1;
+}
+
+.g2 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+  transform-origin: calc(50% - 400px);
+  animation: moveInCircle 20s reverse infinite;
+  opacity: 1;
+}
+
+.g3 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2 + 200px);
+  left: calc(50% - var(--circle-size) / 2 - 500px);
+  transform-origin: calc(50% + 400px);
+  animation: moveInCircle 40s linear infinite;
+  opacity: 1;
+}
+
+.g4 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+  transform-origin: calc(50% - 200px);
+  animation: moveHorizontal 40s ease infinite;
+  opacity: 0.7;
+}
+
+.g5 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: calc(var(--circle-size) * 2);
+  height: calc(var(--circle-size) * 2);
+  top: calc(50% - var(--circle-size));
+  left: calc(50% - var(--circle-size));
+  transform-origin: calc(50% - 800px) calc(50% + 200px);
+  animation: moveInCircle 20s ease infinite;
+  opacity: 1;
+}
+
+.interactive {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: 100%;
+  height: 100%;
+  top: -50%;
+  left: -50%;
+  opacity: 0.7;
+}
+
+/* Dotted grid background */
+.dotted-grid {
+  background-image: radial-gradient(circle, rgba(51, 51, 51, var(--grid-opacity)) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+/* Dark mode dotted grid */
+html.dark .dotted-grid {
+  background-image: radial-gradient(circle, rgba(34, 34, 34, var(--grid-opacity)) 1px, transparent 1px);
+}
+
+/* Ensure html and body take full height */
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+/* Set default background colors to prevent flash */
+html {
+  background-color: #1A1818;
+  color: #A2A2A2;
+}
+
+/* Light mode background */
+html.light {
+  background: #CCDBEB;
+  color: #525252;
+}
+
+/* Dark mode background */
+html.dark {
+  background-color: #1A1818;
+  color: #A2A2A2;
+}
+
+/* Marquee animation for song titles */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 8s linear infinite;
+  display: inline-block;
+}
+
+/* Hide scrollbars while maintaining scroll functionality */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* For IE and Edge */
+* {
+  -ms-overflow-style: none;
+}
+
+/* Scroll indicator styling */
+.scroll-indicator {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Inset text shadow effect for emoji-keyboard placeholder */
+.emoji-keyboard-input::placeholder {
+  color: transparent;
+  background:#E9E9E9;
+  font-family: 'GT Maru Mono', monospace;
+  font-weight: 700;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 
+    /* rgba(255, 255, 255, 0.3) 0 0.2px 0, */
+     rgba(255, 255, 255, 0.5) 0.2px 0 0,
+     rgba(0, 0, 0, 0.4) -0.2px -0.3px 0,
+     rgba(255, 255, 255, 0.9) 0.5px -0.5px 0;
+  filter: drop-shadow(0 1px 4px rgb(255, 255, 255, 0.4));
+}
+
+/* Styling for the actual input text when typing */
+.emoji-keyboard-input {
+  color: transparent !important;
+  background: #E9E9E9 !important;
+  font-family: 'GT Maru Mono', monospace;
+  font-weight: 700;
+  caret-color: #888888 !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  text-shadow: 
+    rgba(255, 255, 255, 0.5) 0.2px 0 0,
+    rgba(0, 0, 0, 0.4) -0.2px -0.3px 0,
+    rgba(255, 255, 255, 0.9) 0.5px -0.5px 0;
+  filter: drop-shadow(0 1px 2px rgb(255, 255, 255, 0.9));
+}
+
+/* Ensure cursor is visible with high contrast */
+.emoji-keyboard-input:focus {
+  caret-color: #888888 !important;
+  outline: none;
+  color: transparent !important;
+  background: #E9E9E9 !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  text-shadow: 
+    rgba(255, 255, 255, 0.5) 0.2px 0 0,
+    rgba(0, 0, 0, 0.4) -0.2px -0.3px 0,
+    rgba(255, 255, 255, 0.9) 0.5px -0.5px 0;
+  filter: drop-shadow(0 1px 2px rgb(255, 255, 255, 0.9));
+}
+
