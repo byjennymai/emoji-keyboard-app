@@ -1,7 +1,5 @@
 "use client"
 
-import { useMotionValue } from "framer-motion"
-import { motion, PanInfo } from "framer-motion"
 import { EmojiPicker, EmojiPickerSearch, EmojiPickerContent } from "@/components/ui/emoji-picker"
 import { useRef, useEffect, useState } from "react"
 import { 
@@ -30,19 +28,8 @@ const EMOJI_CATEGORIES = [
   { name: 'flags', icon: FlagCheckered, label: 'Flags' }
 ]
 
-
-export default function DraggableEmojiPicker() {
-  // Draggable functionality
-  const x = useMotionValue(0)
-  const y = useMotionValue(0)
+export default function EmojiPickerComponent() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [dragConstraints, setDragConstraints] = useState({
-    top: -200,
-    left: -400,
-    right: 400,
-    bottom: 200,
-  })
-  
   
   // Scroll indicator state
   const [currentCategory, setCurrentCategory] = useState(0)
@@ -248,11 +235,6 @@ export default function DraggableEmojiPicker() {
       return () => actualScrollElement.removeEventListener('scroll', handleScroll)
     }
   }, [])
-  
-  const handleDrag = (event: any, info: PanInfo) => {
-    x.set(x.get() + info.delta.x)
-    y.set(y.get() + info.delta.y)
-  }
 
   // Handle emoji copy to clipboard
   const handleEmojiCopy = async (emoji: string) => {
@@ -272,7 +254,6 @@ export default function DraggableEmojiPicker() {
       console.error('Failed to copy emoji:', err)
     }
   }
-
 
   // Set initial scroll position with delay
   useEffect(() => {
@@ -295,42 +276,8 @@ export default function DraggableEmojiPicker() {
     return () => clearTimeout(timer)
   }, [])
 
-  // Update drag constraints based on window size
-  useEffect(() => {
-    const updateConstraints = () => {
-      const windowWidth = window.innerWidth
-      const windowHeight = window.innerHeight
-      const keyboardWidth = 400 // Approximate width of keyboard
-      const keyboardHeight = 320 // Approximate height of keyboard
-      
-      setDragConstraints({
-        top: -(windowHeight - keyboardHeight - 20), // Allow dragging to top edge
-        left: -(windowWidth - keyboardWidth - 20), // Allow dragging to left edge  
-        right: windowWidth - keyboardWidth - 20, // Allow dragging to right edge
-        bottom: windowHeight - keyboardHeight - 20, // Allow dragging to bottom edge
-      })
-    }
-
-    updateConstraints()
-    window.addEventListener('resize', updateConstraints)
-    
-    return () => window.removeEventListener('resize', updateConstraints)
-  }, [])
-
   return (
-    <motion.div 
-      className="fixed pointer-events-auto z-30"
-      style={{ 
-        x, 
-        y,
-        top: '20px',
-        right: '20px'
-      }}
-      drag
-      dragMomentum={false}
-      onDrag={handleDrag}
-      dragConstraints={dragConstraints}
-    >
+    <div className="fixed top-4 left-4 pointer-events-auto z-30">
       <div className="pointer-events-auto" style={{ position: 'relative' }}>
          <div className="h-[280px] w-fit px-2 pt-1 border-t border-l border-r border-b border-gray-500/50" style={{ borderRadius: '48px', paddingBottom: '6px', backgroundColor: '#FAFAF4', position: 'relative' }}>
           {/* Copy confirmation badge */}
@@ -474,6 +421,6 @@ export default function DraggableEmojiPicker() {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }

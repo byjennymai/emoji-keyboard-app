@@ -1,11 +1,11 @@
 'use client'
 
-import DraggableEmojiPicker from '@/components/DraggableEmojiPicker'
+import EmojiPickerComponent from '@/components/EmojiPicker'
 
 export default function HomePage() {
   return (
     <div className="w-full h-screen bg-transparent pointer-events-none">
-      <DraggableEmojiPicker />
+      <EmojiPickerComponent />
     </div>
   )
 }
