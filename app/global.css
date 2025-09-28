@@ -788,6 +788,7 @@ html.dark .dotted-grid {
 html, body {
   height: 100%;
   width: 100%;
+  background: transparent !important;
 }
 
 /* Set default background colors to prevent flash */

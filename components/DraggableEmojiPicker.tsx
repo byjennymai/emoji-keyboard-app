@@ -36,6 +36,12 @@ export default function DraggableEmojiPicker() {
   const x = useMotionValue(0)
   const y = useMotionValue(0)
   const containerRef = useRef<HTMLDivElement>(null)
+  const [dragConstraints, setDragConstraints] = useState({
+    top: -200,
+    left: -400,
+    right: 400,
+    bottom: 200,
+  })
   
   
   // Scroll indicator state
@@ -289,15 +295,43 @@ export default function DraggableEmojiPicker() {
     return () => clearTimeout(timer)
   }, [])
 
+  // Update drag constraints based on window size
+  useEffect(() => {
+    const updateConstraints = () => {
+      const windowWidth = window.innerWidth
+      const windowHeight = window.innerHeight
+      const keyboardWidth = 400 // Approximate width of keyboard
+      const keyboardHeight = 320 // Approximate height of keyboard
+      
+      setDragConstraints({
+        top: -(windowHeight - keyboardHeight - 20), // Allow dragging to top edge
+        left: -(windowWidth - keyboardWidth - 20), // Allow dragging to left edge  
+        right: windowWidth - keyboardWidth - 20, // Allow dragging to right edge
+        bottom: windowHeight - keyboardHeight - 20, // Allow dragging to bottom edge
+      })
+    }
+
+    updateConstraints()
+    window.addEventListener('resize', updateConstraints)
+    
+    return () => window.removeEventListener('resize', updateConstraints)
+  }, [])
+
   return (
     <motion.div 
-      className="fixed inset-0 pointer-events-none z-30"
-      style={{ x, y }}
+      className="fixed pointer-events-auto z-30"
+      style={{ 
+        x, 
+        y,
+        top: '20px',
+        right: '20px'
+      }}
       drag
       dragMomentum={false}
       onDrag={handleDrag}
+      dragConstraints={dragConstraints}
     >
-      <div className="absolute top-8 right-4 pointer-events-auto" style={{ position: 'relative' }}>
+      <div className="pointer-events-auto" style={{ position: 'relative' }}>
          <div className="h-[280px] w-fit px-2 pt-1 border-t border-l border-r border-b border-gray-500/50" style={{ borderRadius: '48px', paddingBottom: '6px', backgroundColor: '#FAFAF4', position: 'relative' }}>
           {/* Copy confirmation badge */}
           {showCopyBadge && copiedEmoji && (
